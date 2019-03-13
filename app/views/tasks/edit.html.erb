@@ -1,0 +1,19 @@
+<p><font color="blue"><%= flash[:success] %></font></p>
+<h1>タスク更新フォーム</h1>
+<% if @task.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <% @task.errors.full_messages.each do |message| %>
+    <ul style="list-style: none; padding-left: 0; color: red">
+        <li><%= message %></li>
+    </ul>
+    <% end %>
+  </div>
+<% end %>
+<%= form_with model: @task, local: true do |form| %>
+  <p>タスク名：<br><br><%= form.text_field :title %></p>
+  <p>タスクメモ：<br><%= form.text_area :memo %></p>
+  <p>状態：<br><%= form.select :status , {"下書き" => "draft", "公開" => "published", "アーカイブ" => "archieved", } %></p>
+  <%= form.submit "更新" %>
+<% end %>
+<br>
+<%= link_to "一覧", tasks_path %>
