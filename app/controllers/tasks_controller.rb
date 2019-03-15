@@ -1,8 +1,7 @@
 class TasksController < ApplicationController
-  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def show
-    @task  = Task.find(params[:id])
   end
 
   def index
