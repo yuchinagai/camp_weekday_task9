@@ -11,9 +11,8 @@
 <%= form_with model: @task, local: true do |form| %>
   <p>タスク名：<br><%= form.text_field :title %></p>
   <p>タスクメモ：<br><%= form.text_area :memo %></p>
-  <p>状態：<br><%= form.select :status , {"下書き" => "draft", "公開" => "published", "アーカイブ" => "archieved", } %></p>
+  <p>状態：<br><%= form.select :status , { "下書き" => "draft", "公開" => "published", "アーカイブ" => "archieved", } %></p>
   <%= form.submit "登録" %>
-  <% :is_display %>
 <% end %>
 <br>
 <%= link_to "一覧", tasks_path %>

@@ -3,9 +3,9 @@
 <% if @task.errors.any? %>
   <div id="error_explanation" class="alert alert-danger">
     <% @task.errors.full_messages.each do |message| %>
-    <ul style="list-style: none; padding-left: 0; color: red">
-        <li><%= message %></li>
-    </ul>
+      <ul style="list-style: none; padding-left: 0; color: red">
+          <li><%= message %></li>
+      </ul>
     <% end %>
   </div>
 <% end %>
